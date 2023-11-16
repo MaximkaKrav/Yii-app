@@ -4,9 +4,6 @@ FROM php:8.1-fpm
 # Устанавливаем необходимые зависимости
 RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
-    libjpeg62-turbo-dev \
-    libpng-dev \
-    libzip-dev \
     zip \
     unzip \
     git \

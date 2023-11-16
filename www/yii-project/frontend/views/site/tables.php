@@ -12,21 +12,23 @@ use yii\helpers\Html;
 
 echo Html::a('Добавить', ['create'], ['class' => 'btn btn-success']);
 
-// Провайдер данных для таблицы Device
-$dataProviderDevice = new \yii\data\ActiveDataProvider([
-    'query' => frontend\models\Device::find(), // Замените app\models\Device на актуальный путь к модели Device
+//// Провайдер данных для таблицы Device
+//$dataProviderDevice = new \yii\data\ActiveDataProvider([
+//    'query' => frontend\models\Device::find(), // Замените app\models\Device на актуальный путь к модели Device
+//]);
+//
+//// Провайдер данных для таблицы Store
+//$dataProviderStore = new \yii\data\ActiveDataProvider([
+//    'query' => frontend\models\Store::find(), // Замените app\models\Store на актуальный путь к модели Store
+//]);
+$dataProvider = new ActiveDataProvider([
+    'query' => Device::find(),
 ]);
-
-// Провайдер данных для таблицы Store
-$dataProviderStore = new \yii\data\ActiveDataProvider([
-    'query' => frontend\models\Store::find(), // Замените app\models\Store на актуальный путь к модели Store
-]);
-
 $searchModel = new SearchDevices();
 
 echo GridView::widget([
-    'dataProvider' => $dataProviderDevice,
-//    'filterModel' => $searchModel,
+    'dataProvider' => $dataProvider,
+    'filterModel' => $searchModel,
     'columns' => [
         'serial_number',
 
@@ -56,7 +58,7 @@ echo GridView::widget([
                     $model->store_id,
                     '#',
                     [
-                        'data-name-store' => $model->store_id,
+                        'data-store-id' => $model->store_id,
                         'data-target' => 'modal',
                     ]
                 );
@@ -120,7 +122,7 @@ echo GridView::widget([
         position: absolute;
         top: -18px;
         right: 10px;
-        font-size: 60px;
+        font-size: 40px;
         cursor: pointer;
     }
 
@@ -182,30 +184,30 @@ $this->registerJs(
 
 <!--name_store-->
 <?php
-$this->registerJs(
-    '
-    const links = document.querySelectorAll("a[data-target=\'modal\']");
-    const modal = document.getElementById("modal");
-    const modalBody = modal.querySelector(".modal-body");
-
-    links.forEach(function(link) {
-        link.addEventListener("click", function(event) {
-            event.preventDefault();
-
-            const name_store = this.getAttribute("data-name-store");
-
-            fetch("index.php?r=site/stores&name_store=" + name_store)
-                .then(response => response.text())
-                .then(data => {
-                    modalBody.innerHTML = data;
-                    modal.style.display = "block";
-                });
-        });
-    });
-
-    modal.querySelector(".close-button").addEventListener("click", function() {
-        modal.style.display = "none";
-    });
-'
-);
-?>
+//$this->registerJs(
+//    '
+//    const links = document.querySelectorAll("a[data-target=\'modal\']");
+//    const modal = document.getElementById("modal");
+//    const modalBody = modal.querySelector(".modal-body");
+//
+//    links.forEach(function(link) {
+//        link.addEventListener("click", function(event) {
+//            event.preventDefault();
+//
+//            const name_store = this.getAttribute("data-name-store");
+//
+//            fetch("index.php?r=site/stores&name_store=" + name_store)
+//                .then(response => response.text())
+//                .then(data => {
+//                    modalBody.innerHTML = data;
+//                    modal.style.display = "block";
+//                });
+//        });
+//    });
+//
+//    modal.querySelector(".close-button").addEventListener("click", function() {
+//        modal.style.display = "none";
+//    });
+//'
+//);
+//?>
