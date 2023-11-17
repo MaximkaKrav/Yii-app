@@ -35,7 +35,7 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Tables', 'url' => ['/site/tables']],
+        ['label' => 'Tables', 'url' => ['tables/']],
 
     ];
 

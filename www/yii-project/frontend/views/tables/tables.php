@@ -150,7 +150,7 @@ echo GridView::widget([
         <div class="modal-body"></div>
     </div>
 </div>
-
+<!---->
 <?php
 $this->registerJs(
     '
@@ -164,7 +164,7 @@ $this->registerJs(
 
             const store_id = this.getAttribute("data-store-id");
 
-            fetch("index.php?r=site/stores&store_id=" + store_id)
+            fetch("index.php?r=tables/stores&store_id=" + store_id)
                 .then(response => response.text())
                 .then(data => {
                     modalBody.innerHTML = data;
@@ -196,7 +196,7 @@ $this->registerJs(
 //
 //            const name_store = this.getAttribute("data-name-store");
 //
-//            fetch("index.php?r=site/stores&name_store=" + name_store)
+//            fetch("index.php?r=t/stores&name_store=" + name_store)
 //                .then(response => response.text())
 //                .then(data => {
 //                    modalBody.innerHTML = data;

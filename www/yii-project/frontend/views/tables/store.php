@@ -1,8 +1,7 @@
 <?php
 
 
-use frontend\models\TablesDeviceAndStoreModel;
-use yii\data\ActiveDataProvider;
+
 use yii\grid\GridView;
 
 
@@ -17,3 +16,4 @@ echo GridView::widget([
     ],
 ]);
 ?>
+
