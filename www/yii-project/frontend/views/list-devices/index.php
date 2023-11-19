@@ -2,16 +2,6 @@
 
 /** @var yii\web\View $this */
 
-$filePath = Yii::getAlias('@app/config/web.php');
-
-if (file_exists($filePath)) {
-    echo "Файл $filePath существует.";
-} else {
-    echo "Файл $filePath не существует.";
-}
-
-
-
 $this->title = 'My Yii Application';
 ?>
 <div class="site-index">

@@ -2,8 +2,6 @@
 <h2>Подробно о вот этом</h2>
 <?php
 
-use frontend\models\TablesDeviceAndStoreModel;
-use yii\data\ActiveDataProvider;
 use yii\widgets\DetailView;
 
 echo DetailView::widget([

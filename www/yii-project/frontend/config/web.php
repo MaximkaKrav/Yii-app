@@ -1,8 +1,5 @@
 <?php
 
-use frontend\controllers\SiteController;
-use frontend\controllers\TablesController;
-
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
@@ -20,17 +17,18 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'tables' => 'tables/index',
+                'list-devices' => 'list-devices/table',
             ],
         ],
         // Other components...
     ],
-    'controllerMap' => [
-        'site' => SiteController::class,
-        'tables' => TablesController::class,
-        // Other controllers...
-    ],
+//    'controllerMap' => [
+//        'site' => SiteController::class,
+//        'tables' => TablesController::class,
+//        // Other controllers...
+//    ],
     'params' => [
         // Other parameters...
     ],
+
 ];

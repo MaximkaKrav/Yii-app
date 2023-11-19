@@ -1,7 +1,6 @@
 <?php
 
-use frontend\controllers\SiteController;
-use frontend\controllers\TablesController;
+
 
 
 return [
@@ -23,15 +22,14 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'tables' => 'tables/index',
+                'list-devices' => 'list-devices/table',
             ],
         ],
 
         // ...
     ],
     'controllerMap' => [
-        'site' => SiteController::class,
-        'tables' => TablesController::class,
+        'table' => \frontend\controllers\ListDevicesController::class,
     ],
     'params' => [
         // ...

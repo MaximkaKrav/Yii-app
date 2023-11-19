@@ -1,7 +1,5 @@
 <?php
 
-use yii\web\Application;
-
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 defined('YII_ENV') or define('YII_ENV', 'dev');
 
@@ -17,4 +15,6 @@ $config = yii\helpers\ArrayHelper::merge(
     require __DIR__ . '/../config/main-local.php'
 );
 
-(new Application($config))->run();
+(new yii\web\Application($config))->run();
+Yii::$app->getResponse()->redirect('index.php?r=user/login')->send();
+
