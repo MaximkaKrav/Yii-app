@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-19T09:01:25.883Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 YaBrowser/23.9.0.0 Safari/537.36" etag="0iPOnxwiOAfh5Ih2gCsU" version="22.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-19T09:04:05.377Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 YaBrowser/23.9.0.0 Safari/537.36" etag="3mfgKDlnaIOE7HQmfyBr" version="22.1.3" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1384" dy="807" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -30,20 +30,32 @@
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="ListDevicesController" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="300" y="60" width="120" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="Mt9aQKPmGFDoS66LCbKl-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-6" target="Mt9aQKPmGFDoS66LCbKl-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-6" value="ViewDevices" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;fillColor=#f8cecc;strokeColor=#b85450;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="40" y="190" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Mt9aQKPmGFDoS66LCbKl-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-12" target="Mt9aQKPmGFDoS66LCbKl-11">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-12" value="ListDevices" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="440" y="210" width="120" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="Mt9aQKPmGFDoS66LCbKl-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Mt9aQKPmGFDoS66LCbKl-0" target="Mt9aQKPmGFDoS66LCbKl-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="Mt9aQKPmGFDoS66LCbKl-0" value="UpdateDevices" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="170" y="190" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Mt9aQKPmGFDoS66LCbKl-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Mt9aQKPmGFDoS66LCbKl-1" target="Mt9aQKPmGFDoS66LCbKl-26">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Mt9aQKPmGFDoS66LCbKl-1" value="DeleteDevices" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="310" y="190" width="100" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Mt9aQKPmGFDoS66LCbKl-11" value="Тут таблица&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="455" y="248" width="90" height="30" as="geometry" />
+        <mxCell id="Mt9aQKPmGFDoS66LCbKl-11" value="Тут таблица c модальным&lt;br&gt;Максимум как декомпозировать-&lt;br&gt;вывести css и js во внешние файлы" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="410" y="450" width="220" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Mt9aQKPmGFDoS66LCbKl-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Mt9aQKPmGFDoS66LCbKl-15" target="Mt9aQKPmGFDoS66LCbKl-16">
           <mxGeometry relative="1" as="geometry" />
@@ -65,6 +77,15 @@
         </mxCell>
         <mxCell id="Mt9aQKPmGFDoS66LCbKl-20" value="FormLogin" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="570" y="310" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Mt9aQKPmGFDoS66LCbKl-22" value="viewDevice" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=0;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="30" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Mt9aQKPmGFDoS66LCbKl-24" value="updateDevice" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=0;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="160" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Mt9aQKPmGFDoS66LCbKl-26" value="deleteDevice" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=0;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="300" y="360" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
