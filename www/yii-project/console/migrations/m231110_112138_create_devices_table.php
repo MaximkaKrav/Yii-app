@@ -12,7 +12,8 @@ class m231110_112138_create_devices_table extends Migration
     {
         $this->createTable('store', [
             'id' => $this->primaryKey(),
-            'name_store'=>$this->string(50)->notNull(),
+            'store_id' =>$this->integer()->notNull(),
+            'name_store'=>$this->string()->notNull(),
             'created_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->notNull(),
             'updated_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->notNull(),
         ]);
@@ -44,15 +45,18 @@ class m231110_112138_create_devices_table extends Migration
         ]);
         $this->insert('store', [
             'id' => '1',
+            'store_id'=>'1',
             'name_store'=>'Number1'
         ]);
         $this->insert('store', [
             'id' => '2',
+            'store_id'=>'2',
             'name_store'=>'Number2'
 
         ]);
         $this->insert('store', [
             'id' => '3',
+            'store_id'=>'3',
             'name_store'=>'Number3'
 
         ]);

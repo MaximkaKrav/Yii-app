@@ -25,7 +25,7 @@ class ListDevicesController extends Controller{
         ];
     }
 
-
+//    таблица
     public function actionTable()
     {
         $searchModel = new SearchDevices();
@@ -47,6 +47,7 @@ class ListDevicesController extends Controller{
         );
     }
 
+//    кнопка просмотра элемента в таблице
     public function actionView($id)
     {
         $model = Device::findOne($id);
@@ -54,7 +55,7 @@ class ListDevicesController extends Controller{
     }
 
 
-
+//    кнопка редактирования элементав таблице
     public function actionUpdate($id)
     {
         $model = Device::findOne($id);
@@ -67,7 +68,7 @@ class ListDevicesController extends Controller{
     }
 
 
-
+//     кнопка удаления элементав таблице
     public function actionDelete($id)
     {
         $model = Device::findOne($id);
@@ -76,7 +77,7 @@ class ListDevicesController extends Controller{
     }
 
 
-
+//  кнопка создания элементав таблице
     public function actionCreate()
     {
         $model = new Device();
@@ -93,6 +94,23 @@ class ListDevicesController extends Controller{
         );
     }
 
+
+//    просмотр девайсов в конкретном складе модальным окном
+    public function actionStores($store_id)
+    {
+        $dataProvider = new ActiveDataProvider(
+            [
+                'query' => Device::find()->where(['store_id' => $store_id]),
+            ]
+        );
+
+        return $this->renderPartial(
+            'devices_on_store',
+            [
+                'dataProvider' => $dataProvider,
+            ]
+        );
+    }
     public function behaviors()
     {
         return [
