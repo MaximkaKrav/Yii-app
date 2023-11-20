@@ -29,14 +29,9 @@ class ListDevicesController extends Controller{
     public function actionTable()
     {
         $searchModel = new SearchDevices();
-        $dataProvider = new ActiveDataProvider(
-            [
-                'query' => Device::find(),
-                'pagination' => [
-                    'pageSize' => 20,
-                ],
-            ]
-        );
+
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
 
         return $this->render(
             'table',
@@ -98,19 +93,17 @@ class ListDevicesController extends Controller{
 //    просмотр девайсов в конкретном складе модальным окном
     public function actionStores($store_id)
     {
-        $dataProvider = new ActiveDataProvider(
-            [
-                'query' => Device::find()->where(['store_id' => $store_id]),
-            ]
-        );
 
-        return $this->renderPartial(
-            'devices_on_store',
-            [
-                'dataProvider' => $dataProvider,
-            ]
-        );
+        $dataProvider = new ActiveDataProvider([
+            'query' => Device::find()->where(['store_id' => $store_id]),
+        ]);
+
+        return $this->renderPartial('table', [
+            'dataProvider' => $dataProvider,
+        ]);
     }
+
+
     public function behaviors()
     {
         return [

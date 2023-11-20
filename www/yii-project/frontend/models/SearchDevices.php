@@ -6,42 +6,46 @@ use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use yii\helpers\Console;
 
-class SearchDevices extends Device
+class SearchDevices extends Device{
+
+
+public function rules()
 {
-    public function rules()
-    {
-        return [
-            [['store_id'], 'integer'],
-        ];
+    return [
+        [['store_id'], 'integer'],
+    ];
     }
-        public function search($params)
-        {
-            $query = Device::find();
 
-            // add conditions that should always apply here
+    public function scenarios()
+    {
+        // TODO: Измените автогенерированный макет
+        return parent::scenarios();
+    }
 
-            $dataProvider = new ActiveDataProvider([
-                'query' => $query,
-            ]);
+    public function search($params)
+    {
+        $query = Device::find();
 
-            $this->load($params);
+        // Добавьте условия, которые всегда должны применяться здесь
 
-            if (!$this->validate()) {
-                // uncomment the following line if you do not want to return any records when validation fails
-                // $query->where('0=1');
-                return $dataProvider;
-            }
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
 
-            // grid filtering conditions
-            $query->andFilterWhere([
-                'store_id' => $this->id,
-            ]);
+        $this->load($params);
 
-            $query->andFilterWhere(['like', 'store_id', $this->title]);
+//        if (!$this->validate()) {
+//            // Раскомментируйте следующую строку, если не хотите возвращать записи при ошибке валидации
+//            // $query->where('0=1');
+//            return $dataProvider;
+//        }
 
-            return $dataProvider;
-        }
+        // Условия фильтрации сетки
+        $query->andFilterWhere(['store_id' => $this->store_id]);
+        $query->andFilterWhere(['like', 'store_id', $this->store_id]);
 
+        return $dataProvider;
+    }
 
 }
 
