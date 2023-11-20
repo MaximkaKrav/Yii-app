@@ -21,7 +21,7 @@ class Device extends ActiveRecord
     public function rules()
     {
         return [
-            [['serial_number', 'store_id','about'], 'required'],
+            [['serial_number', 'store_id','name_store','about'], 'required'],
             [['store_id'], 'string'],
             [['serial_number'], 'string', 'max' => 255],
         ];

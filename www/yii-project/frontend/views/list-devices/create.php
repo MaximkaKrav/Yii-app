@@ -1,13 +1,28 @@
-<?php use yii\helpers\Html;
+<?php
+use frontend\models\Store;
+use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
 
-$form = ActiveForm::begin(); ?>
+$form = ActiveForm::begin();
 
-<?= $form->field($model, 'serial_number')->textInput() ?>
+// Получите список всех магазинов
+$stores = ArrayHelper::map(Store::find()->all(), 'id', 'name');
 
-<?= $form->field($model, 'store_id')->textInput() ?>
-<?= $form->field($model, 'about')->textInput() ?>
+// Отобразите поле store_id с использованием списка значений из базы данных
+echo $form->field($model, 'store_id')->dropDownList(
+    ArrayHelper::map(Store::find()->all(),'store_id','name_store')
+);
 
-<?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+echo $form->field($model, 'name_store')->dropDownList(
+    ArrayHelper::map(Store::find()->all(), 'name_store', 'name_store')
+);
 
-<?php ActiveForm::end(); ?>
+
+echo $form->field($model, 'serial_number')->textInput();
+echo $form->field($model, 'about')->textInput();
+
+echo Html::submitButton('Save', ['class' => 'btn btn-success']);
+
+ActiveForm::end();
+?>

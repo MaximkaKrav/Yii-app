@@ -22,6 +22,7 @@ class m231110_112138_create_devices_table extends Migration
             'id' => $this->primaryKey(),
             'serial_number' => $this->string()->unique()->notNull(),
             'store_id' => $this->integer(),
+            'name_store'=>$this->string()->notNull(),
             'about' => $this->string(),
             'created_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->notNull(),
             'updated_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->notNull(),
@@ -46,18 +47,18 @@ class m231110_112138_create_devices_table extends Migration
         $this->insert('store', [
             'id' => '1',
             'store_id'=>'1',
-            'name_store'=>'Number1'
+            'name_store'=>'DNS'
         ]);
         $this->insert('store', [
             'id' => '2',
             'store_id'=>'2',
-            'name_store'=>'Number2'
+            'name_store'=>'MVIDEO'
 
         ]);
         $this->insert('store', [
             'id' => '3',
             'store_id'=>'3',
-            'name_store'=>'Number3'
+            'name_store'=>'MTC'
 
         ]);
 
@@ -66,6 +67,7 @@ class m231110_112138_create_devices_table extends Migration
         $this->insert('device', [
             'serial_number' => '111111111111',
             'store_id' => 1,
+            'name_store'=>'DNS',
             'about' => 'ddddddddddddd',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),

@@ -12,7 +12,7 @@ class SearchDevices extends Device{
 public function rules()
 {
     return [
-        [['store_id'], 'integer'],
+        [['name_store'], 'integer'],
     ];
     }
 
@@ -41,8 +41,8 @@ public function rules()
 //        }
 
         // Условия фильтрации сетки
-        $query->andFilterWhere(['store_id' => $this->store_id]);
-        $query->andFilterWhere(['like', 'store_id', $this->store_id]);
+        $query->andFilterWhere(['name_store' => $this->name_store]);
+        $query->andFilterWhere(['like', 'name_store', $this->name_store]);
 
         return $dataProvider;
     }

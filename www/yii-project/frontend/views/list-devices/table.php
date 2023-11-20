@@ -23,7 +23,13 @@ $this->registerJsFile(
 
 /* @var $searchModel frondend\models\SearchDevices */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+
+
+
 $searchModel = new SearchDevices();
+
+
+
 echo Html::a('Добавить', ['create'], ['class' => 'btn btn-success']);
 
 echo GridView::widget([
@@ -38,7 +44,7 @@ echo GridView::widget([
 
             'value' => function ($model) {
                 return Html::a(
-                    $model->store_id,
+                    $model->name_store,
                     '#',
                     [
                         'data-store-id' => $model->store_id,
@@ -49,8 +55,8 @@ echo GridView::widget([
 
             'filter' => Select2::widget([
                 'model' => $searchModel,
-                'attribute' => 'store_id', //
-                'data' => ArrayHelper::map(Store::find()->all(),'store_id','store_id'),
+                'attribute' => 'name_store', //
+                'data' => ArrayHelper::map(Store::find()->all(),'name_store','name_store'),
                 'theme' => Select2::THEME_BOOTSTRAP,
                 'hideSearch' => true,
                 'options' => [
