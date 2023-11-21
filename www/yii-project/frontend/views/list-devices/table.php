@@ -12,7 +12,7 @@ use yii\helpers\ArrayHelper;
 
 
 $this->registerCssFile("@web/css/style.css", [
-    'depends' => [\yii\bootstrap4\BootstrapAsset::class],
+    'depends' => [\yii\bootstrap5\BootstrapAsset::class],
     'media' => 'print',
 ], 'css-print-theme');
 $this->registerJsFile(
@@ -36,11 +36,17 @@ echo GridView::widget([
     'dataProvider' => $dataProvider,
     'filterModel' => $searchModel,
     'columns' => [
-        'serial_number',
+        [
+            'attribute' => 'serial_number',
+            'label' => 'Серийный номер',
+            'headerOptions' => ['class' => 'title_table'],
+        ],
 
         [
             'attribute' => 'store_id',
             'format' => 'raw',
+            'label'=> 'Магазин',
+            'headerOptions' => ['class' => 'title_table'],
 
             'value' => function ($model) {
                 return Html::a(
@@ -61,8 +67,10 @@ echo GridView::widget([
                 'hideSearch' => true,
                 'options' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Select a store ...',
-                    'id'=>'storeId'
+                    'placeholder' => 'выбрать магазин',
+                    'id'=>'storeId',
+                    'value' => '',
+
                 ],
                 'pluginOptions' => [
                     'allowClear' => true,
@@ -70,13 +78,33 @@ echo GridView::widget([
                 ],
             ])
         ],
-        'about',
-        'created_at',
-        ['class' => 'yii\grid\ActionColumn'],
+        [
+                'attribute' => 'about',
+                'format' => 'raw',
+                'label'=> 'Описание',
+                'headerOptions' => ['class' => 'title_table'],
+
+            ],
+        [
+            'attribute' => 'created_at',
+            'headerOptions' => ['class' => 'title_table'],
+            'format' => 'raw',
+            'label'=> 'Дата создания',
+
+        ],
+        [
+                'class' => 'yii\grid\ActionColumn',
+                'header'=>'Действия',
+                'headerOptions' => ['class' => 'title_table'],
+
+        ],
     ],
 ]);
+echo Html::a('Сбросить фильтр', ['table'], ['class' => 'btn btn-success']);
 
 ?>
+
+
 <!--МОдальное окно-->
 <div id="modal" class="modal hidden">
     <div class="modal-content">

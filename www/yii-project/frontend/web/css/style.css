@@ -1,5 +1,6 @@
  /* Стили для затемнения фона */
-.modal {
+
+ .modal {
     display: none;
     position: fixed;
     top: 0;

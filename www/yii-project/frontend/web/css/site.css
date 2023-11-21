@@ -2,7 +2,6 @@ main > .container, main > .container-fluid
 {
     padding: 70px 15px 20px;
 }
-
 .footer {
     background-color: #f5f5f5;
     font-size: .9em;
@@ -28,7 +27,8 @@ a.asc:after, a.desc:after {
     height: 0;
     border: solid 5px transparent;
     margin: 4px 4px 2px 4px;
-    background: transparent;
+    text-decoration: none;
+
 }
 
 a.asc:after {
@@ -99,5 +99,21 @@ a.desc:after {
 
 .breadcrumb-item > a
 {
+    text-decoration: none;
+}
+
+
+
+
+
+
+/*Стили названий столбцов в таблице*/
+.title_table{
+    text-align: center;
+    text-transform: lowercase;
+    font-family: monospace;
+
+}
+.title_table a{
     text-decoration: none;
 }
