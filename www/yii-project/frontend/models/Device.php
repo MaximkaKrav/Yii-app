@@ -38,7 +38,6 @@ class Device extends ActiveRecord
             [
                 'class' => TimestampBehavior::class,
                 'value' => function () {
-//                    return Yii::$app->formatter->asDatetime(date('Y-d-m h:i:s'));
                 },
             ],
         ];
