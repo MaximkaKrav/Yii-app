@@ -5,13 +5,12 @@ namespace frontend\controllers;
 use frontend\models\Device;
 use frontend\models\SearchDevices;
 use Yii;
-use yii\base\InvalidConfigException;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 
-class ListDevicesController extends Controller{
+class DevicesController extends Controller{
     public function actions()
     {
         return [
@@ -26,7 +25,7 @@ class ListDevicesController extends Controller{
     }
 
 //    таблица
-    public function actionTable()
+    public function actionDevices()
     {
         $searchModel = new SearchDevices();
 
@@ -34,7 +33,7 @@ class ListDevicesController extends Controller{
 
 
         return $this->render(
-            'table',
+            'devices',
             [
                 'searchModel' => $searchModel,
                 'dataProvider' => $dataProvider,
@@ -68,7 +67,7 @@ class ListDevicesController extends Controller{
     {
         $model = Device::findOne($id);
         $model->delete();
-        return $this->redirect(['table']);
+        return $this->redirect(['devices']);
     }
 
 
@@ -97,7 +96,7 @@ class ListDevicesController extends Controller{
             'query' => Device::find()->where(['name_store' => $name_store ]),
         ]);
 
-        return $this->renderPartial('table', [
+        return $this->renderPartial('devices', [
             'dataProvider' => $dataProvider,
         ]);
     }

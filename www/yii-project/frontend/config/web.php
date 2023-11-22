@@ -17,7 +17,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'list-devices' => 'list-devices/table',
+                'devices' => 'devices/table',
             ],
         ],
         // Other components...

@@ -1,9 +1,11 @@
 <?php
 
-use yii\db\Expression;
 use yii\db\Migration;
 
-class m231110_112138_create_devices_table extends Migration
+/**
+ * Class m231122_103748_devices_store_table
+ */
+class m231122_103748_devices_store_table extends Migration
 {
     /**
      * @throws \yii\base\Exception
@@ -11,9 +13,9 @@ class m231110_112138_create_devices_table extends Migration
     public function safeUp()
     {
         $this->createTable('store', [
+
             'id' => $this->primaryKey(),
-            'store_id' =>$this->integer()->notNull(),
-            'name_store'=>$this->string()->notNull(),
+            'name_store'=>$this->string()->notNull()->unique(),
             'created_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->notNull(),
             'updated_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->notNull(),
         ]);
@@ -21,15 +23,18 @@ class m231110_112138_create_devices_table extends Migration
         $this->createTable('device', [
             'id' => $this->primaryKey(),
             'serial_number' => $this->string()->unique()->notNull(),
-            'store_id' => $this->integer(),
             'name_store'=>$this->string()->notNull(),
             'about' => $this->string(),
             'created_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->notNull(),
             'updated_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->notNull(),
         ]);
 
-        $this->createIndex('idx-device-store_id', 'device', 'store_id');
-        $this->addForeignKey('fk_device_store', 'device', 'store_id', 'store', 'id', 'CASCADE', 'CASCADE');
+        $this->createIndex('idx-device-store_id', 'device', 'name_store');
+        $this->addForeignKey('fk_device_store', 'device', 'name_store', 'store', 'name_store', 'CASCADE', 'CASCADE');
+
+
+
+
 
         $this->createTable('{{%user}}', [
             'id' => $this->primaryKey(),
@@ -44,34 +49,6 @@ class m231110_112138_create_devices_table extends Migration
             'password_hash' => $security->generatePasswordHash('test'),
             'status' => 10,
         ]);
-        $this->insert('store', [
-            'id' => '1',
-            'store_id'=>'1',
-            'name_store'=>'DNS'
-        ]);
-        $this->insert('store', [
-            'id' => '2',
-            'store_id'=>'2',
-            'name_store'=>'MVIDEO'
-
-        ]);
-        $this->insert('store', [
-            'id' => '3',
-            'store_id'=>'3',
-            'name_store'=>'MTC'
-
-        ]);
-
-
-
-        $this->insert('device', [
-            'serial_number' => '111111111111',
-            'store_id' => 1,
-            'name_store'=>'DNS',
-            'about' => 'ddddddddddddd',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
 
     }
 
@@ -82,5 +59,4 @@ class m231110_112138_create_devices_table extends Migration
         $this->dropTable('store');
         $this->dropTable('{{%user}}');
     }
-
 }

@@ -5,6 +5,7 @@ namespace frontend\views;
 
 use frontend\models\Device;
 use frontend\models\SearchDevices;
+use frontend\models\SearchStores;
 use frontend\models\Store;
 use kartik\select2\Select2;
 use yii\bootstrap5\Html;
@@ -20,15 +21,6 @@ $this->registerJsFile(
     '@web/js/modal_script_table.js',
     ['depends' => [\yii\web\JqueryAsset::class]]
 );
-
-
-$filename = "@web/css/style.css";
-
-if (file_exists($filename)) {
-    echo "File exist.";
-} else {
-    echo "File does not exist.";
-}
 
 
 
@@ -52,24 +44,7 @@ echo GridView::widget([
             'format' => 'raw',
             'label' => 'Серийный номер',
             'headerOptions' => ['class' => 'title_table'],
-            'filter' => Select2::widget([
-                'model' => $searchModel,
-                'attribute' => 'serial_number', //
-                'data' => ArrayHelper::map(Device::find()->all(), 'serial_number', 'serial_number'),
-                'theme' => Select2::THEME_BOOTSTRAP,
-                'hideSearch' => true,
-                'options' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'выбрать серийный',
-                    'id'=>'serial_number',
-                    'value' => '',
 
-                ],
-                'pluginOptions' => [
-                    'allowClear' => true,
-                    'selectOnClose' => true,
-                ],
-            ])
         ],
 
         [
@@ -130,7 +105,7 @@ echo GridView::widget([
         ],
     ],
 ]);
-echo Html::a('Сбросить фильтр', ['table'], ['class' => 'btn btn-success']);
+echo Html::a('Сбросить фильтр', ['devices'], ['class' => 'btn btn-success']);
 
 ?>
 

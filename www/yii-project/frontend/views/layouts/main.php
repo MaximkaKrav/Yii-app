@@ -28,14 +28,15 @@ AppAsset::register($this);
     <header>
         <?php
         NavBar::begin([
-            'brandLabel' => Yii::$app->name,
-            'brandUrl' => Yii::$app->homeUrl,
+//            'brandLabel' => Yii::$app->name,
+//            'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
             ],
         ]);
         $menuItems = [
-            ['label' => 'Tables', 'url' => ['list-devices/table']],
+            ['label' => 'Devices', 'url' => ['devices/devices']],
+            ['label' => 'Stores', 'url' => ['stores/stores']],
 
         ];
 

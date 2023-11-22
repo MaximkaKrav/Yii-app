@@ -22,14 +22,14 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'list-devices' => 'list-devices/table',
+                'devices' => 'devices/table',
             ],
         ],
 
         // ...
     ],
     'controllerMap' => [
-        'table' => \frontend\controllers\ListDevicesController::class,
+        'table' => \frontend\controllers\DevicesController::class,
     ],
     'params' => [
         // ...
