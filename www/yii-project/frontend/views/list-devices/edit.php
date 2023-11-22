@@ -7,7 +7,7 @@ $form = ActiveForm::begin([
     'options' => ['class' => 'form-horizontal'],
 ]) ?>
 <?= $form->field($model, 'serial_number') ?>
-<?= $form->field($model, 'store_id') ?>
+<?= $form->field($model, 'name_store') ?>
 <?= $form->field($model, 'about') ?>
 
     <div class="form-group">

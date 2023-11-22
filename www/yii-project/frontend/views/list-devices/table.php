@@ -3,6 +3,7 @@
 
 namespace frontend\views;
 
+use frontend\models\Device;
 use frontend\models\SearchDevices;
 use frontend\models\Store;
 use kartik\select2\Select2;
@@ -19,6 +20,16 @@ $this->registerJsFile(
     '@web/js/modal_script_table.js',
     ['depends' => [\yii\web\JqueryAsset::class]]
 );
+
+
+$filename = "@web/css/style.css";
+
+if (file_exists($filename)) {
+    echo "File exist.";
+} else {
+    echo "File does not exist.";
+}
+
 
 
 /* @var $searchModel frondend\models\SearchDevices */
@@ -38,12 +49,31 @@ echo GridView::widget([
     'columns' => [
         [
             'attribute' => 'serial_number',
+            'format' => 'raw',
             'label' => 'Серийный номер',
             'headerOptions' => ['class' => 'title_table'],
+            'filter' => Select2::widget([
+                'model' => $searchModel,
+                'attribute' => 'serial_number', //
+                'data' => ArrayHelper::map(Device::find()->all(), 'serial_number', 'serial_number'),
+                'theme' => Select2::THEME_BOOTSTRAP,
+                'hideSearch' => true,
+                'options' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'выбрать серийный',
+                    'id'=>'serial_number',
+                    'value' => '',
+
+                ],
+                'pluginOptions' => [
+                    'allowClear' => true,
+                    'selectOnClose' => true,
+                ],
+            ])
         ],
 
         [
-            'attribute' => 'store_id',
+            'attribute' => 'name_store',
             'format' => 'raw',
             'label'=> 'Магазин',
             'headerOptions' => ['class' => 'title_table'],
@@ -53,7 +83,7 @@ echo GridView::widget([
                     $model->name_store,
                     '#',
                     [
-                        'data-store-id' => $model->store_id,
+                        'data-name-store' => $model->name_store,
                         'data-target' => 'modal',
                     ]
                 );
@@ -113,7 +143,6 @@ echo Html::a('Сбросить фильтр', ['table'], ['class' => 'btn btn-su
         <div class="modal-body"></div>
     </div>
 </div>
-
 
 
 

@@ -78,24 +78,23 @@ class ListDevicesController extends Controller{
         $model = new Device();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['table']);
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->render(
-            'create',
-            [
-                'model' => $model,
-            ]
-        );
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 
 
+
+
 //    просмотр девайсов в конкретном складе модальным окном
-    public function actionStores($store_id)
+    public function actionStores($name_store)
     {
 
         $dataProvider = new ActiveDataProvider([
-            'query' => Device::find()->where(['store_id' => $store_id]),
+            'query' => Device::find()->where(['name_store' => $name_store ]),
         ]);
 
         return $this->renderPartial('table', [

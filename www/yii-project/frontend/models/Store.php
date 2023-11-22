@@ -21,7 +21,7 @@ class Store extends ActiveRecord{
 
     public function getDevices(){
 
-        return $this->hasMany(Device::className(),['store_id' => 'id']);
+        return $this->hasMany(Device::className(),['name_store' => 'id']);
     }
 
 

@@ -1,6 +1,6 @@
-const links = document.querySelectorAll("a[data-target='modal']");
-let modal = document.getElementById("modal");
-let modalBody;
+const links = document.querySelectorAll("a[data-target=\'modal\']");
+const modal = document.getElementById("modal");
+const modalBody = modal.querySelector(".modal-body");
 
 if(modal){
     console.log('modal object found');
@@ -9,12 +9,12 @@ if(modal){
     console.log('modal object not found');
 }
 
-$(modal).click(function (){
+$(modal).click(function (event){
 
     event.preventDefault();
-    const device_id = this.getAttribute("data-device-id");
+    const name_store = this.getAttribute("data-name-store");
 
-    fetch("listDevices.php?device_id=" + device_id)
+    fetch("index.php?r=list-devices/stores&name_store=" + name_store)
         .then(response => response.text())
         .then(data => {
             if(modal && modalBody){
@@ -25,6 +25,9 @@ $(modal).click(function (){
         });
 
 })
+
+
+
 
 if(modal){
     modal.querySelector(".close-button").addEventListener("click", function() {

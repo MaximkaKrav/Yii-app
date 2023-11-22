@@ -18,8 +18,8 @@ class TablesDeviceAndStoreModel extends ActiveRecord{
     public function rules()
     {
         return [
-            [['serial_number', 'store_id','about'], 'required'],
-            [['store_id'], 'integer'],
+            [['serial_number', 'name_store','about'], 'required'],
+            [['name_store'], 'string'],
             [['serial_number'], 'string', 'max' => 255],
         ];
     }

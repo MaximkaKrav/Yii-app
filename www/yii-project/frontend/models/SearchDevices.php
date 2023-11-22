@@ -12,7 +12,8 @@ class SearchDevices extends Device{
 public function rules()
 {
     return [
-        [['name_store'], 'integer'],
+        [['name_store', 'serial_number'], 'safe'],
+
     ];
     }
 
@@ -26,26 +27,22 @@ public function rules()
     {
         $query = Device::find();
 
-        // Добавьте условия, которые всегда должны применяться здесь
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
 
         $this->load($params);
 
-//        if (!$this->validate()) {
-//            // Раскомментируйте следующую строку, если не хотите возвращать записи при ошибке валидации
-//            // $query->where('0=1');
-//            return $dataProvider;
-//        }
-
         // Условия фильтрации сетки
         $query->andFilterWhere(['name_store' => $this->name_store]);
         $query->andFilterWhere(['like', 'name_store', $this->name_store]);
 
+        $query->andFilterWhere(['serial_number' => $this->serial_number]);
+        $query->andFilterWhere(['like', 'serial_number', $this->serial_number]);
+
         return $dataProvider;
     }
+
 
 }
 
