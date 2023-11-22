@@ -89,7 +89,7 @@ class DevicesController extends Controller{
 
 
 //    просмотр девайсов в конкретном складе модальным окном
-    public function actionStores($name_store)
+    public function actionStoresList($name_store)
     {
 
         $dataProvider = new ActiveDataProvider([

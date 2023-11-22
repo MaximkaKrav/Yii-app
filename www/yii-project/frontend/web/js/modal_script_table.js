@@ -42,7 +42,7 @@ links.forEach(function(link) {
 
         const name_store = this.getAttribute("data-name-store");
 
-        fetch("index.php?r=devices/stores&name_store=" + name_store)
+        fetch("index.php?r=devices/stores-list&name_store=" + name_store)
             .then(response => response.text())
             .then(data => {
                 modalBody.innerHTML = data;
