@@ -12,7 +12,7 @@ class SearchDevices extends Device{
 public function rules()
 {
     return [
-        [['name_store', 'serial_number'], 'safe'],
+        [['nameStore', 'serial_number'], 'safe'],
 
     ];
     }
@@ -34,8 +34,8 @@ public function rules()
         $this->load($params);
 
         // Условия фильтрации сетки
-        $query->andFilterWhere(['name_store' => $this->name_store]);
-        $query->andFilterWhere(['like', 'name_store', $this->name_store]);
+        $query->andFilterWhere(['nameStore' => $this->nameStore]);
+        $query->andFilterWhere(['like', 'nameStore', $this->nameStore]);
 
         $query->andFilterWhere(['serial_number' => $this->serial_number]);
         $query->andFilterWhere(['like', 'serial_number', $this->serial_number]);

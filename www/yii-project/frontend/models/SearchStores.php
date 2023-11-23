@@ -11,7 +11,7 @@ class SearchStores extends Device{
     public function rules()
     {
         return [
-            [['name_store', 'created_at'], 'safe'],
+            [['nameStore', 'created_at'], 'safe'],
 
         ];
     }
@@ -33,8 +33,8 @@ class SearchStores extends Device{
         $this->load($params);
 
         // Условия фильтрации сетки
-        $query->andFilterWhere(['name_store' => $this->name_store]);
-        $query->andFilterWhere(['like', 'name_store', $this->name_store]);
+        $query->andFilterWhere(['nameStore' => $this->nameStore]);
+        $query->andFilterWhere(['like', 'nameStore', $this->nameStore]);
 
         $query->andFilterWhere(['created_at' => $this->serial_number]);
         $query->andFilterWhere(['like', 'created_at', $this->serial_number]);

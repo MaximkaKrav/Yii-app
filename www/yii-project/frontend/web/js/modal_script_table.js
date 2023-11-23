@@ -40,9 +40,9 @@ links.forEach(function(link) {
     link.addEventListener("click", function (event) {
         event.preventDefault();
 
-        const name_store = this.getAttribute("data-name-store");
+        const nameStore = this.getAttribute("data-name-store");
 
-        fetch("index.php?r=devices/stores-list&name_store=" + name_store)
+        fetch("index.php?r=devices/stores-list&nameStore=" + nameStore)
             .then(response => response.text())
             .then(data => {
                 modalBody.innerHTML = data;

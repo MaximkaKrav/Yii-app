@@ -89,11 +89,11 @@ class DevicesController extends Controller{
 
 
 //    просмотр девайсов в конкретном складе модальным окном
-    public function actionStoresList($name_store)
+    public function actionStoresList($nameStore)
     {
 
         $dataProvider = new ActiveDataProvider([
-            'query' => Device::find()->where(['name_store' => $name_store ]),
+            'query' => Device::find()->where(['nameStore' => $nameStore ]),
         ]);
 
         return $this->renderPartial('devices', [

@@ -9,7 +9,7 @@ echo DetailView::widget([
     'model' => $model,
     'attributes' => [
         'id',
-        'name_store',
+        'nameStore',
         'created_at',
         'updated_at',
 

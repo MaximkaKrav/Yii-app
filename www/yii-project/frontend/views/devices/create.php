@@ -7,8 +7,8 @@ use yii\helpers\ArrayHelper;
 $form = ActiveForm::begin();
 
 
-echo $form->field($model, 'name_store')->dropDownList(
-    ArrayHelper::map(Store::find()->all(), 'name_store', 'name_store')
+echo $form->field($model, 'nameStore')->dropDownList(
+    ArrayHelper::map(Store::find()->all(), 'nameStore', 'nameStore')
 );
 
 

@@ -15,7 +15,7 @@ class m231122_103748_devices_store_table extends Migration
         $this->createTable('store', [
 
             'id' => $this->primaryKey(),
-            'name_store'=>$this->string()->notNull()->unique(),
+            'nameStore'=>$this->string()->notNull()->unique(),
             'created_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->notNull(),
             'updated_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->notNull(),
         ]);
@@ -23,14 +23,14 @@ class m231122_103748_devices_store_table extends Migration
         $this->createTable('device', [
             'id' => $this->primaryKey(),
             'serial_number' => $this->string()->unique()->notNull(),
-            'name_store'=>$this->string()->notNull(),
+            'nameStore'=>$this->string()->notNull(),
             'about' => $this->string(),
             'created_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->notNull(),
             'updated_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->notNull(),
         ]);
 
-        $this->createIndex('idx-device-store_id', 'device', 'name_store');
-        $this->addForeignKey('fk_device_store', 'device', 'name_store', 'store', 'name_store', 'CASCADE', 'CASCADE');
+        $this->createIndex('idx-device-store_id', 'device', 'nameStore');
+        $this->addForeignKey('fk_device_store', 'device', 'nameStore', 'store', 'nameStore', 'CASCADE', 'CASCADE');
 
 
 

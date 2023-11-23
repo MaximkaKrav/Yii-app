@@ -22,14 +22,14 @@ class Store extends ActiveRecord{
 
     public function getDevices(){
 
-        return $this->hasMany(Device::className(),['name_store' => 'id']);
+        return $this->hasMany(Device::className(),['nameStore' => 'id']);
     }
 
     public function rules()
     {
         return [
-            [['name_store'], 'required'],
-            [['name_store'], 'string'],
+            [['nameStore'], 'required'],
+            [['nameStore'], 'string'],
 
         ];
     }

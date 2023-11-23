@@ -10,7 +10,7 @@ echo DetailView::widget([
     'attributes' => [
         'id',
         'serial_number',
-        'name_store',
+        'nameStore',
         'about',
         'created_at',
         'updated_at',

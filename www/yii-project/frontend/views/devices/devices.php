@@ -48,17 +48,17 @@ echo GridView::widget([
         ],
 
         [
-            'attribute' => 'name_store',
+            'attribute' => 'nameStore',
             'format' => 'raw',
             'label'=> 'Магазин',
             'headerOptions' => ['class' => 'title_table'],
 
             'value' => function ($model) {
                 return Html::a(
-                    $model->name_store,
+                    $model->nameStore,
                     '#',
                     [
-                        'data-name-store' => $model->name_store,
+                        'data-name-store' => $model->nameStore,
                         'data-target' => 'modal',
                     ]
                 );
@@ -66,8 +66,8 @@ echo GridView::widget([
 
             'filter' => Select2::widget([
                 'model' => $searchModel,
-                'attribute' => 'name_store', //
-                'data' => ArrayHelper::map(Store::find()->all(),'name_store','name_store'),
+                'attribute' => 'nameStore', //
+                'data' => ArrayHelper::map(Store::find()->all(),'nameStore','nameStore'),
                 'theme' => Select2::THEME_BOOTSTRAP,
                 'hideSearch' => true,
                 'options' => [

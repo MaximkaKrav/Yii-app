@@ -15,19 +15,19 @@ class Device extends ActiveRecord
 
     public function getStores()
     {
-        return $this->hasOne(Store::className(), ['id' => 'name_store']);
+        return $this->hasOne(Store::className(), ['id' => 'nameStore']);
     }
 
     public function getDevice()
     {
-        return $this->hasMany(Device::className(), ['name_store' => 'id']);
+        return $this->hasMany(Device::className(), ['nameStore' => 'id']);
     }
 
     public function rules()
     {
         return [
-            [['serial_number', 'name_store', 'about'], 'required'],
-            [['name_store'], 'string'],
+            [['serial_number', 'nameStore', 'about'], 'required'],
+            [['nameStore'], 'string'],
             [['serial_number'], 'string', 'max' => 255],
 
         ];

@@ -10,8 +10,8 @@ $form = ActiveForm::begin([
     'options' => ['class' => 'form-horizontal'],
 ]) ?>
 <?= $form->field($model, 'serial_number') ?>
-<?= $form->field($model, 'name_store')->dropDownList(
-    ArrayHelper::map(Store::find()->all(), 'name_store', 'name_store')
+<?= $form->field($model, 'nameStore')->dropDownList(
+    ArrayHelper::map(Store::find()->all(), 'nameStore', 'nameStore')
 ) ?>
 
 <?= $form->field($model, 'about') ?>

@@ -7,7 +7,7 @@ use yii\helpers\ArrayHelper;
 $form = ActiveForm::begin();
 
 
-echo $form->field($model, 'name_store');
+echo $form->field($model, 'nameStore');
 
 echo Html::submitButton('Save', ['class' => 'btn btn-success']);
 
